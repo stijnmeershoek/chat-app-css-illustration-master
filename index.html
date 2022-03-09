@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- My CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <title>Chat App Illustration</title>
+</head>
+
+<body>
+  <div class="main-container">
+    <div class="background-shapes">
+      <div class="left-shape shape"></div>
+      <div class="right-shape shape"></div>
+    </div>
+    <main>
+      <div class="phone">
+        <div class="phone-notch"></div>
+        <form class="chat-app">
+          <div class="chat-app-header">
+            <div>
+              <div class="back-button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                  <path
+                    d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z" />
+                </svg>
+              </div>
+              <img src="./images/avatar.jpg" alt="avatar">
+              <div class="chat-info">
+                <h2 class="chat-info-name">Samuel Green</h2>
+                <h3 class="chat-info-status">Available to Walk</h3>
+              </div>
+            </div>
+            <div class="header-menu"></div>
+          </div>
+          <div class="chat-app-body">
+            <div class="message-left message">
+              <span>That sounds great. I’d be happy with that.</span>
+            </div>
+            <div class="message-left message">
+              <span>Could you send over some pictures of your dog, please?</span>
+            </div>
+            <div class="message-images">
+              <img src="./images/dog-image-1.jpg" alt="dog image 1">
+              <img src="./images/dog-image-2.jpg" alt="dog image 2">
+              <img src="./images/dog-image-3.jpg" alt="dog image 3">
+            </div>
+            <div class="message-right message">
+              <span>Here are a few pictures. She’s a happy girl!</span>
+            </div>
+            <div class="message-right message">
+              <span>Can you make it?</span>
+            </div>
+            <div class="message-left message">
+              <span>She looks so happy! The time we discussed works. How long shall I take her out for?</span>
+            </div>
+            <div class="booking">
+              <div class="booking-time">
+                <input type="radio" name="walkLength" id="walk-length" class="circle" value="30">
+                <label for="walk-length"></label>
+                <span>30 minute walk</span>
+              </div>
+              <h4>$29</h4>
+            </div>
+            <div class="booking">
+              <div class="booking-time">
+                <input type="radio" name="walkLength" id="walk-length-2" class="circle" value="60">
+                <label for="walk-length-2"></label>
+                <span>1 hour walk</span>
+              </div>
+              <h4>$49</h4>
+            </div>
+          </div>
+          <div class="chat-app-footer">
+            <input type="text" placeholder="Type a message…"></input>
+            <div class="send-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                <path
+                  d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z" />
+              </svg>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="text">
+        <h1>Simple booking</h1>
+        <p>Stay in touch with our dog walkers through the chat interface. This makes it easy to
+          discuss arrangements and make bookings. Once the walk has been completed you can rate
+          your walker and book again all through the chat.</p>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>

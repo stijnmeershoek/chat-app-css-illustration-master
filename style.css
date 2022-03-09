@@ -1,0 +1,395 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Primary Colors */
+
+  /* sub-heading at the top of the app UI */
+  --pale-violet: hsl(276, 100%, 81%);
+  /* chat on the left */
+  --moderate-violet: hsl(276, 55%, 52%);
+  /* chat on the right */
+  --desaturated-dark-violet: hsl(271, 15%, 43%);
+  /* placeholder text */
+  --grayish-blue: hsl(206, 6%, 79%);
+  /* main heading */
+  --very-dark-desaturated-violet: hsl(271, 36%, 24%);
+  /* paragraph */
+  --dark-greyish-violet: hsl(270, 7%, 64%);
+
+  /* ---------------
+    Gradient Colors
+    These two colors are the vibrant background colors you see throughout the design and are applied as a linear gradient:
+--------------- */
+  --light-magenta: hsl(293, 100%, 63%);
+  --light-violet: hsl(264, 100%, 61%);
+
+  /* Secondary Colors */
+
+  --white: hsl(0, 0%, 100%);
+  /* App Background */
+  --light-greyish-violet: hsl(270, 20%, 96%);
+  /* submit button background */
+  --very-dark-desaturated-violet: hsl(271, 36%, 24%);
+  /* radio button outline */
+  --very-light-magenta: hsl(289, 100%, 72%);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fafafa;
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+main {
+  width: 100vw;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+.main-container {
+  height: 100vh;
+  padding-inline: 5vw;
+  position: relative;
+}
+
+.background-shapes {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100%;
+  z-index: -1;
+}
+
+.shape {
+  --x: -8vmin;
+  max-width: 600px;
+  height: 87.5vh;
+  width: 45vmax;
+  position: absolute;
+}
+
+.left-shape {
+  border-bottom-left-radius: 100vw;
+  border-bottom-right-radius: 100vw;
+  top: 0;
+  left: var(--x);
+  background: var(--light-magenta);
+  background: linear-gradient(225deg, var(--light-magenta) 0%, var(--light-violet) 82%);
+}
+
+.right-shape {
+  border-top-left-radius: 100vw;
+  border-top-right-radius: 100vw;
+  bottom: 0;
+  right: var(--x);
+  background-color: var(--light-greyish-violet);
+  filter: brightness(1.01);
+}
+
+.phone {
+  width: 325px;
+  padding: 13px;
+  aspect-ratio: 9 / 18;
+  background-color: var(--white);
+  border-radius: 40px;
+  box-shadow: rgba(111, 74, 126, 0.2) 0px 30px 60px -12px, rgba(42, 20, 43, 0.2) 0px 18px 36px -18px;
+  position: relative;
+}
+
+.phone-notch {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 27px;
+  width: 50%;
+  background-color: var(--white);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  z-index: 10;
+}
+
+.phone .chat-app {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--light-greyish-violet);
+}
+
+.phone .chat-app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 90px;
+  padding-top: 27px;
+  background: var(--light-magenta);
+  background: linear-gradient(270deg, var(--light-magenta) 0%, var(--light-violet) 100%);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-inline: 25px;
+}
+
+.phone .chat-app-header > div {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.phone .chat-app-header .back-button {
+  height: 21px;
+  transform: scaleX(0.7);
+  cursor: pointer;
+}
+
+.phone .chat-app-header .back-button svg {
+  height: 100%;
+  width: fit-content;
+  fill: var(--light-greyish-violet);
+}
+
+.phone .chat-app-header img {
+  height: 30px;
+  border: 1px solid var(--white);
+  border-radius: 100%;
+  margin-left: 10px;
+}
+
+.phone .chat-app-header .chat-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 15px;
+  height: 40px;
+}
+
+.phone .chat-app-header h2 {
+  color: var(--light-greyish-violet);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.phone .chat-app-header h3 {
+  color: var(--pale-violet);
+  font-size: 10px;
+}
+
+.phone .chat-app-header .header-menu {
+  height: 15px;
+  width: 10px;
+  background-image: radial-gradient(circle, var(--light-greyish-violet) 1px, transparent 2px);
+  background-size: 100% 33.33%;
+  cursor: pointer;
+}
+
+.phone .chat-app-body {
+  flex-grow: 1;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.phone .chat-app-body .message {
+  width: fit-content;
+  height: fit-content;
+  max-width: 62%;
+  border-radius: 15px;
+}
+
+.phone .chat-app-body .message-left {
+  padding: 8px 10px 10px 10px;
+  background-color: hsl(270 7% 64% / 0.12);
+  margin-bottom: 10px;
+  border-bottom-left-radius: 5px;
+}
+
+.phone .chat-app-body .message-right + .message-left,
+.phone .chat-app-body .message-left + .message-right {
+  margin-top: 5px;
+}
+
+.phone .chat-app-body .message-right,
+.phone .chat-app-body .message-images {
+  align-self: flex-end;
+}
+
+.phone .chat-app-body .message-right {
+  padding: 6px 9px 9px 9px;
+  background-color: var(--white);
+  margin-bottom: 10px;
+  border-bottom-right-radius: 5px;
+}
+
+.phone .chat-app-body span {
+  display: inline-block;
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+.phone .chat-app-body .message-left span {
+  color: var(--moderate-violet);
+}
+
+.phone .chat-app-body .message-right span {
+  color: var(--desaturated-dark-violet);
+}
+
+.phone .chat-app-body .message-images {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.phone .chat-app-body img {
+  width: 50px;
+  aspect-ratio: 1 / 1;
+  border-radius: 15px;
+  margin-left: 5px;
+}
+
+.phone .chat-app-body .booking {
+  max-width: 80%;
+  background: var(--light-magenta);
+  background: linear-gradient(90deg, var(--light-magenta) 0%, var(--light-violet) 100%);
+  margin-bottom: 10px;
+  color: var(--light-greyish-violet);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  padding-right: 25px;
+  border-radius: 15px;
+  border-bottom-left-radius: 5px;
+}
+
+.phone .chat-app-body .booking > div {
+  display: flex;
+  align-items: center;
+}
+
+input[type="radio"] {
+  display: none;
+}
+input[type="radio"] + label {
+  width: 15px;
+  aspect-ratio: 1 / 1;
+  outline: none;
+  border: 2px solid var(--very-light-magenta);
+  background-color: transparent;
+  margin-right: 10px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked + label {
+  background-color: var(--very-light-magenta);
+}
+
+.phone .chat-app-footer {
+  min-height: 45px;
+  width: calc(100% - 30px);
+  background-color: var(--white);
+  border-radius: 100vw;
+  margin-bottom: 15px;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 8px;
+}
+
+.phone .chat-app-footer input {
+  outline: none;
+  border: none;
+  color: var(--desaturated-dark-violet);
+}
+
+.phone .chat-app-footer input::placeholder {
+  color: var(--grayish-blue);
+}
+
+.phone .chat-app-footer .send-btn {
+  height: 29px;
+  border-radius: 100%;
+  background-color: var(--very-dark-desaturated-violet);
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+}
+
+.phone .chat-app-footer .send-btn svg {
+  height: 60%;
+  width: fit-content;
+  transform: scale(-1);
+  fill: var(--light-greyish-violet);
+}
+
+.phone .chat-app-footer .send-btn:hover {
+  background-color: var(--desaturated-dark-violet);
+  cursor: pointer;
+}
+
+.text {
+  max-width: 550px;
+}
+
+.text h1 {
+  color: var(--very-dark-desaturated-violet);
+  font-size: 48px;
+  margin-bottom: 30px;
+}
+
+.text p {
+  color: var(--dark-greyish-violet);
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+@media screen and (max-width: 1100px) {
+  .main-container {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  main {
+    flex-direction: column;
+    padding-inline: 50px;
+    padding-bottom: 100px;
+  }
+  .main-container {
+    height: auto;
+  }
+  .shape {
+    max-width: unset;
+    width: 100vw;
+    --x: -50vw;
+    height: 65vh;
+  }
+
+  .phone {
+    transform: scale(0.8);
+    margin-inline: auto;
+  }
+
+  .text {
+    text-align: center;
+  }
+}
